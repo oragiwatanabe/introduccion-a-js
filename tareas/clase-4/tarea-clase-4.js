@@ -1,9 +1,25 @@
 // TAREA: Imprimí cada 3er número del 3 al 22 usando un 'bucle for'.
 
+function tarea1() {
+    for (let i = 3; i <= 22; i = i + 3) {
+        console.log(i);
+    }
+}
 
 // TAREA: Usando un bucle 'while', decile a tu computadora que registre los números de
 //       diez a uno.
 
+function tarea2() {
+    let contador = 10;
+    let numeros = [];
+
+    while (contador > 0) {
+        numeros.push(contador);
+        contador--;
+    }
+
+    console.log(numeros);
+}
 
 // TAREA: Ha llegado el momento de un ejercicio clásico: 'FizzBuzz'.
 // Cuenta del 1 al 50 e imprime los números:
@@ -17,5 +33,58 @@
 // 16% 4 = 0 - en 16 tenemos 4 * 4
 // 19% 4 = 3 - en 19 tenemos 4 * 4 + 3, etc.
 
+function fizzBuzz() {
+    for (let i = 1; i <= 50; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+            console.log('FizzBuzz');
+        } else if (i % 3 === 0) {
+            console.log('Fizz');
+        } else if (i % 5 === 0) {
+            console.log('Buzz');
+        } else {
+            console.log(i);
+        }
+    }
+}
+
+/*
+function fizzBuzzSofisticado() {
+    for (let i = 1; i <= 50; i++) {
+        let texto = '';
+
+        if (i % 3 === 0){
+            texto = 'Fizz';
+        }
+
+        if(i % 5 === 0){
+            texto += 'Buzz';
+        }
+
+        console.log(texto || i);  
+    }
+}*/
+
+
+
 // Calcular el promedio de todos los números en un array de números. (y ponerlo en una función)
 // ej.: calcularPromedio([10,5,4,2,8])
+
+let notasCuatrimestre = [7, 6, 9, 4, 7];
+let sumatoriaNotas = 0;
+
+function calcularPromedio(notasCuatrimestre) {
+    let i;
+    for (i = 0; i < notasCuatrimestre.length; i++) {
+        sumatoriaNotas += notasCuatrimestre[i];
+
+    }
+    return sumatoriaNotas / notasCuatrimestre.length;
+}
+
+
+
+// EJECUTAR TAREAS
+tarea1();
+tarea2();
+fizzBuzz();
+console.log('El promedio de notas es ' + calcularPromedio(notasCuatrimestre));

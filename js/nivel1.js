@@ -40,6 +40,8 @@
 
 // Tarea: Ahora te toca a vos! Acá abajo escribí una alerta que diga "Hola mundo!"
 
+// alert('Hola mundo!');
+
 
 // Tarea: Una vez que la alerta funcione, comentala poniendo '//' en la línea donde está el código y guardá los cambios.
 // Una vez que recargás la página, ya no debería aparecer más.
@@ -47,6 +49,7 @@
 
 // Tarea: Ahora probá hacer un console.log de un mensaje que queramos.
 
+// console.log('Hola mundo!');
 
 // Consejo: Para recargar el navegador podemos apretar 'CMD + R' en Mac y 'CTRL + R' en
 //      Windows.
@@ -101,8 +104,10 @@
 */
 
 // TAREA: Creá 2 variables indefinidas, llamadas numeroUno y numeroDos.
-
-
+/*
+let numeroUno;
+let numeroDos;
+*/
 /*
     Podés usar el nombre de tus variables pare representar qué información tienen adentro, por ejemplo:
 
@@ -114,7 +119,13 @@
 
 // Crear 2 variables nuevas, una con tu nombre, la segunda con tu edad. Dales un nombre apropriado y
 // mostralas con un alert.
+/*
+let miNombre = 'Agustin Nicolas Zarate';
+let miEdad = '28';
 
+alert("Mi nombre es " + miNombre + " y tengo " + miEdad + " años.");
+console.log(miEdad, miNombre);
+*/
 
 // Consejo: para mostrar 2 variables de texto al mismo tiempo, las podés unir usando el signo '+'. Ejemplo:
 
@@ -150,9 +161,12 @@
 
 // TAREA: Crear una constante y mostrarla con un alert
 
+//const miEstatura = 165;
+//alert('Mi estatura es ' + miEstatura + ' cm');
 
 // TAREA: Intentar asignar un valor a una constante y ver qué pasa (mirar la consola)
 
+//miEstatura = 210; //Uncaught TypeError: invalid assignment to const 'miEstatura'
 
 // Consejo: No te olvides de comentar (//) los alerts y los errores intencionales (como en la tarea anterior) para
 // que los alerts no aparezcan cada vez, y para que los errores no hagan que el programa se detenga.
@@ -183,6 +197,12 @@
 // la 1ra variable multiplicada (con el operador *) por la 2nda variable.
 // Mostrar el valor de resultadoMultiplicacion con un alert o un console.log
 
+/*
+let diez = 10;
+let tres = 3;
+let resultadoMultiplicacion = diez * tres;
+console.log(resultadoMultiplicacion);
+*/
 
 /*
     Funciones
@@ -239,16 +259,104 @@
 // Escribí código para que devuelva (return) la suma de numero1 y numero2
 // Ejecutá la función sumar y mostrá su resultado en la consola
 
+//let numero1 = 5;
+//let numero2 = 4;
+/*
+function sumar(numero1, numero2){
+    return numero1 + numero2;
+}*/
+
+//console.log(sumar(5,4));
+
+
 
 // TAREA: Ahora creemos otra función llamada 'restar'
 //       Que acepte 2 números como parámetro y los reste, y que devuelva ese valor.
 // Ejecutá la función con los números 5 y 1 y mostralos con console.log
+/*
+function restar(numero1, numero2){
+    return numero1 - numero2;
+}*/
+
+//console.log(restar(numero1,numero2));
 
 
 // Consejo: Sabías que en vez de pasar los números directamente a tu función podés crear variables con esos números
 // y pasarlos como parámetros? Probalo!
 
 // Consejo: Dejá las funciones como están, no las comentes, las vamos a usar de nuevo.
+
+/*
+let nombreUsuario = prompt('¿Cual es tu nombre?', 'Agustin');
+
+function saludoInicial(nombreUsuario){
+    return alert('Hola ' + nombreUsuario + '!!!');
+}
+
+saludoInicial(nombreUsuario);*/
+
+
+///---------------------------------------------- SCOPE---------------------------------------------------------//
+
+// Variable hoisting -> izar
+
+//console.log(hola); //Falla porque la variable hola no está definida
+
+// console.log(mensaje); //No falla, pero muestra undefined... por qué? por el [[hoisting]]
+// var mensaje = 'Hola, mundo';
+// console.log(mensaje); //Hola, mundo //Aca ya se muestra el mensaje
+
+// Y con let?
+// let mensaje = 'Hola, mundo';
+// console.log(mensaje); //error. No aplica el hoisting
+
+// function hoisting
+
+/*
+pruebaHoisting(); //funciona!
+function pruebaHoisting(){
+    console.log('prueba');
+}
+//pruebaHoisting();
+*/
+
+/*
+var a = 1; //a es una variable global
+let b = 2; //b es una variable global
+
+function prueba(c) { //c es un parámetro de la funcion prueba, por ende es LOCAL a la funcion
+    let d = 4; //variable local a la función
+
+    if(c === 3){
+        var e = 5; // por hoisting, termina siendo una variable local a la función
+        let f = 6; // variable local al IF
+
+        console.log('a dentro del if vale: ' + a); // 1
+        console.log('b dentro del if vale: ' + b); // 2
+        console.log('c dentro del if vale: ' + c); // lo que sea que le pasen a prueba
+        console.log('d dentro del if vale: ' + d); // 4
+        console.log('e dentro del if vale: ' + e); // 5
+        console.log('f dentro del if vale: ' + f); // 6
+    }
+
+    console.log('a dentro de la funcion pero fuera del if, vale: ' + a); // 1
+    console.log('b dentro de la funcion pero fuera del if, vale: ' + b); // 2
+    console.log('c dentro de la funcion pero fuera del if, vale: ' + c); // lo que sea que le pasen a prueba
+    console.log('d dentro de la funcion pero fuera del if, vale: ' + d); // 4
+    console.log('e dentro de la funcion pero fuera del if, vale: ' + e); // 5
+    console.log('f dentro de la funcion pero fuera del if, vale: ' + f); // error
+}
+
+prueba(4);
+*/
+/*console.log('a vale: ' + a); // 1
+console.log('b vale: ' + b); // 2*/
+// console.log('c vale: ' + c); // error
+// console.log('d vale: ' + d); // error
+// console.log('e vale: ' + e); // error
+// console.log('f vale: ' + f); // error
+
+
 
 /*
     Condicionales If-Else
@@ -327,6 +435,26 @@
 // No se olviden de hacer un console.log para ver el resultado!
 //
 
+//let operador = '+';
+/*
+const operador = prompt('Ingrese un operador');
+let numero1 = 15;
+let numero2 = 5;
+let resultado;
+*/
+/*
+if(operador === '+'){
+    resultado = sumar(numero1, numero2);
+} else {
+    resultado = restar(numero1, numero2);
+}*/
+
+//console.log('El resultado de ' + numero1 + ' ' + operador + ' ' + numero2 + ' es ' + resultado);
+//Con template strings
+
+//console.log(`El resultado de ${numero1} ${operador} ${numero2} es ${resultado}`);
+
+
 // TAREA: Cambiar el operador a '-', y fijarse que llame a la función 'restar' en vez de a la de 'sumar'.
 
 
@@ -360,8 +488,13 @@
 
 // TAREA: Creemos 2 funciones más: dividir y multiplicar.
 
+function multiplicar(numero1, numero2){
+    return numero1 * numero2;
+}
 
-
+function dividir(numero1, numero2){
+    return numero1 / numero2;
+}
 
 
 // TAREA: Reescribamos el if-else que teníamos y extendámolos, agregando:
@@ -370,9 +503,26 @@
 //       'else if' el 'operador' es igual a '*' - llamar a la función 'multiplicar'.
 //       else console.log - "Perdón, no conozco ese operador".
 
+/*
+const operador = prompt('Ingrese un operador');
+let numero1 = 10;
+let numero2 = 2;
+let resultado;
 
+if(operador === '+'){
+    resultado = sumar(numero1, numero2);
+} else if (operador === '-') {
+    resultado = restar(numero1, numero2);
+} else if (operador === '*' ){
+    resultado = multiplicar(numero1, numero2);
+} else if (operador === '/'){
+    resultado = dividir(numero1, numero2);
+} else {
+    console.log(`Perdon, no conozco el operador ${operador}`);
+}
 
-
+console.log(`El resultado de ${numero1} ${operador} ${numero2} es ${resultado}`);
+*/
 
 /*
     Operadores Booleanos
@@ -400,6 +550,14 @@
 
 // TAREA: usando el operador !, Intentá invertir una variable (de true a false, o de false a true) e imprimí el
 // resultado en la consola.
+
+/*
+let miVariable = true;
+
+console.log(miVariable); //true
+console.log(!miVariable); //false 
+console.log(!!miVariable); //true
+*/
 
 
 ////////////////////////////////////////////////////////////////////////////

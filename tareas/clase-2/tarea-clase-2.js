@@ -18,6 +18,29 @@
 
 // TAREA: Cambiar el operador a '-', y fijarse que llame a la función 'restar' en vez de a la de 'sumar'.
 
+//-----------------------------------------MI RESOLUCION-------------------------------------------//
+let operador = '+';
+
+const operador = prompt('Ingrese un operador');
+let numero1 = 15;
+let numero2 = 5;
+let resultado;
+
+
+if(operador === '+'){
+    resultado = sumar(numero1, numero2);
+} else {
+    resultado = restar(numero1, numero2);
+}
+
+//console.log('El resultado de ' + numero1 + ' ' + operador + ' ' + numero2 + ' es ' + resultado);
+//Con template strings
+
+console.log(`El resultado de ${numero1} ${operador} ${numero2} es ${resultado}`);
+
+
+//-----------------------------------------------RESOLUCION ARG PRG ---------------------------------//
+/*
 function sumar(numero1, numero2) {
     return numero1 + numero2;
 }
@@ -41,4 +64,4 @@ if (operador === '+') {
 console.log(
     `El resultado de ${numero1} ${operador} ${numero2} es ${resultado}`
 );
-
+*/

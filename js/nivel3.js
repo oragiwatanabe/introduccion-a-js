@@ -1,5 +1,20 @@
 // Nivel 3
 
+function sumar(n1, n2){
+	return n1 + n2;
+}
+
+const restar = function(n1, n2){
+	return n1 - n2;
+}
+
+function tareaOperador(funcionOperador, n1, n2){
+	console.log(funcionOperador(n1,n2));
+}
+
+tareaOperador(sumar, 1, 2);
+
+
 /*
     Introducción
     ============
